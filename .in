@@ -7,6 +7,6 @@ if [ ! "$(docker ps -q -f name=tysql)" ]; then
         docker start tysql
     else
         # run container
-        docker run --name tysql -e POSTGRES_PASSWORD=tysql -e POSTGRES_USER=tysql -v `pwd`:/tysql -d postgres
+        docker run --name tysql -e POSTGRES_PASSWORD=tysql -e POSTGRES_USER=tysql -v `pwd`:/tysql:Z -d postgres
     fi
 fi
